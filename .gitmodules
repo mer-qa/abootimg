@@ -1,0 +1,3 @@
+[submodule "abootimg"]
+	path = abootimg
+	url = https://gitorious.org/ac100/abootimg.git
