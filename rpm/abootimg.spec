@@ -8,6 +8,7 @@ Group:          System/Boot
 Url:            http://gitorious.org/ac100/abootimg
 Source:         %{name}-%{version}.tar.gz 
 BuildRequires:  pkgconfig(blkid)
+BuildRequires:  git
 
 %description
 Android boot image manipulator. It can create/update/unpack boot.img - boot
@@ -17,16 +18,15 @@ file used by Android OS.
 %setup -q
 
 %build
-# First make clean as a binary already exists in the tarball
-make clean -C aboot
-make %{?_smp_mflags} -C aboot
+make %{?_smp_mflags} -C abootimg
 
 %install
 install -m 755 -d %{buildroot}/%{_bindir}
-install -m 755 aboot/abootimg %{buildroot}/%{_bindir}
-install -m 755 aboot/abootimg-unpack-initrd %{buildroot}/%{_bindir}
-install -m 755 aboot/abootimg-pack-initrd %{buildroot}/%{_bindir}
+install -m 755 abootimg/abootimg %{buildroot}/%{_bindir}
+install -m 755 abootimg/abootimg-unpack-initrd %{buildroot}/%{_bindir}
+install -m 755 abootimg/abootimg-pack-initrd %{buildroot}/%{_bindir}
 
 %files
+%doc abootimg/LICENSE abootimg/Changelog abootimg/README
 %defattr(-,root,root)
 %{_bindir}/*
