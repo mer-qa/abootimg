@@ -6,7 +6,7 @@ Summary:        Android boot image manipulator
 License:        GPL-2.0+ and Apache-2.0
 Group:          System/Boot
 Url:            http://gitorious.org/ac100/abootimg
-Source:         %{name}.tar.bz2
+Source:         %{name}-%{version}.tar.gz 
 BuildRequires:  pkgconfig(blkid)
 
 %description
@@ -14,7 +14,7 @@ Android boot image manipulator. It can create/update/unpack boot.img - boot
 file used by Android OS.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 # First make clean as a binary already exists in the tarball
