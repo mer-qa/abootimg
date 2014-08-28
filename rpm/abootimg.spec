@@ -8,7 +8,6 @@ Group:          System/Boot
 Url:            http://gitorious.org/ac100/abootimg
 Source:         %{name}-%{version}.tar.gz 
 BuildRequires:  pkgconfig(blkid)
-BuildRequires:  git
 
 %description
 Android boot image manipulator. It can create/update/unpack boot.img - boot
